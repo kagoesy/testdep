@@ -13,7 +13,7 @@ variables:
   dockerRegistryServiceConnection: '9daa8191-340c-4753-8d11-dce608ff76d9'
   imageRepository: 'testapp'
   containerRegistry: 'testacr717.azurecr.io'
-  dockerfilePath: 'deploy4aks/Dockerfile'
+  dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
