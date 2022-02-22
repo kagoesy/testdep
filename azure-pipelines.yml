@@ -15,6 +15,7 @@ variables:
   containerRegistry: 'testacr717.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/deploy4aks/Dockerfile'
   tag: '$(Build.BuildId)'
+  
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -35,5 +36,6 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
+        buildContext: $(Build.SourcesDirectory)
         tags: |
           $(tag)
